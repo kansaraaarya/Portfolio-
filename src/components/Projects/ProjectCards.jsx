@@ -1,38 +1,44 @@
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import { CgWebsite } from "react-icons/cg";
+// import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 function ProjectCards(props) {
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+      <div className="project-card-img-container">
+        <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+        <div className="project-card-overlay"></div>
+      </div>
       <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
+        <Card.Title className="project-card-title">{props.title}</Card.Title>
+        <Card.Text className="project-card-description">
           {props.description}
         </Card.Text>
-        <Button variant="primary" href={props.ghLink} target="_blank">
-          <BsGithub /> &nbsp;
-          {props.isBlog ? "Blog" : "GitHub"}
-        </Button>
-        {"\n"}
-        {"\n"}
-
-        {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
-
-        {!props.isBlog && props.demoLink && (
-          <Button
-            variant="primary"
-            href={props.demoLink}
+        <div className="project-card-buttons">
+          <Button 
+            variant="primary" 
+            href={props.ghLink} 
             target="_blank"
-            style={{ marginLeft: "10px" }}
+            className="project-card-btn"
           >
-            <CgWebsite /> &nbsp;
-            {"Demo"}
+            <BsGithub /> &nbsp;
+            {props.isBlog ? "Blog" : "GitHub"}
           </Button>
-        )}
+
+          {/* {/* {!props.isBlog && props.demoLink && (
+            <Button
+              variant="primary"
+              href={props.demoLink}
+              target="_blank"
+              className="project-card-btn"
+            // > */}
+            {/* //   <CgWebsite /> &nbsp;
+            //   {"Demo"}
+            // </Button> */}
+          
+        </div>
       </Card.Body>
     </Card>
   );
@@ -44,7 +50,7 @@ ProjectCards.propTypes = {
   description: PropTypes.string.isRequired,
   ghLink: PropTypes.string.isRequired,
   isBlog: PropTypes.bool,
-  demoLink: PropTypes.string,
+  // demoLink: PropTypes.string,
 };
 
 export default ProjectCards;
