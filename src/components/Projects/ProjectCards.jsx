@@ -8,7 +8,7 @@ function ProjectCards(props) {
   return (
     <Card className="project-card-view">
       <div className="project-card-img-container">
-        <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+        {/* <Card.Img variant="top" src={props.imgPath} alt="card-img" /> */}
         <div className="project-card-overlay"></div>
       </div>
       <Card.Body>

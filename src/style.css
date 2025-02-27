@@ -1,3 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
 html {
   --section-background-color: linear-gradient(
     to bottom left,
@@ -92,21 +105,35 @@ button:focus {
 }
 
 .navbar-toggler {
-  position: relative !important;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin-right: 10px;
+  padding: 0;
+  border: none !important;
   background-color: transparent !important;
-  border-color: transparent !important;
 }
 
 .navbar-toggler span {
-  display: block !important;
-  background-color: #be50f4 !important;
-  height: 4px !important;
-  width: 27px !important;
-  margin-top: 5px !important;
-  margin-bottom: 5px !important;
-  transform: rotate(0deg) !important;
-  left: 0 !important;
-  opacity: 1 !important;
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #c770f0 !important;
+  margin: 6px auto;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Animation for toggle button when expanded */
+.navbar-toggler[aria-expanded="true"] span:first-child {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] span:last-child {
+  transform: rotate(-45deg) translate(7px, -8px);
 }
 
 .navbar-toggler:focus,
@@ -142,16 +169,59 @@ button:focus {
   opacity: 0.9 !important;
 }
 
+/* Mobile Navigation Toggle Button Styles */
 @media (max-width: 767px) {
-  .navbar {
-    padding: 1rem 2rem !important;
-    font-size: 1.4rem !important;
-    background-color: #181a27 !important;
+  .navbar-collapse {
+    background-color: #181a27;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
-  .navbar-nav .nav-item a::after {
-    display: none !important;
+
+  .navbar-nav .nav-item {
+    margin: 10px 0;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.5rem 1rem !important;
+    text-align: center;
   }
 }
+
+/* Additional styles for smaller mobile devices */
+@media (max-width: 460px) {
+  .navbar {
+    padding: 0.5rem 1rem !important;
+  }
+
+  .navbar-toggler {
+    width: 35px;
+    height: 35px;
+    margin-right: 5px;
+  }
+
+  .navbar-toggler span {
+    width: 25px;
+    height: 2px;
+    margin: 5px auto;
+  }
+
+  .navbar-collapse {
+    padding: 0.8rem;
+    margin-top: 8px;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 8px 0;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.9rem !important;
+    padding: 0.4rem 0.8rem !important;
+  }
+}
+
 .navbar-brand {
   color: rgb(250, 250, 250) !important;
 }
@@ -407,9 +477,9 @@ button:focus {
   background-color: rgb(10, 4, 22);
   bottom: 0 !important;
   padding-top: 10px !important;
-  padding-bottom: 8px !important ;
+  padding-bottom: 8px !important;
+  width: 100%;
 }
-
 
 .footer-body {
   z-index: 1;
@@ -417,10 +487,8 @@ button:focus {
 }
 
 @media (max-width: 767px) {
-  
-
   .footer-body {
-    text-align: center ;
+    text-align: center;
   }
 }
 
@@ -431,14 +499,14 @@ button:focus {
   margin-bottom: 0.5em !important;
 }
 .footer-icons {
-  margin-top: 0.5em ;
-  margin-bottom: 0.5em ;
-   display: flex; 
-  justify-content: center; 
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  display: flex;
+  justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 0 ;
-  margin-left:150%;
+  padding: 0;
+  margin-left: 0;
 }
 
 .blockquote-footer {
@@ -477,15 +545,15 @@ button:focus {
   box-shadow: 0 4px 20px rgba(119, 53, 136, 0.75);
 }
 
-.card-img-top {
+/* .card-img-top {
   width: 100%;
   height: 200px; /* Fixed height for images */
-  object-fit: cover;
+  /* object-fit: cover;
   padding: 15px !important;
   opacity: 0.9 !important;
   border-radius: 15px !important;
   background: rgba(255, 255, 255, 0.05);
-}
+} */ 
 
 .blog-card {
   padding-top: 50px;
@@ -885,4 +953,21 @@ h1 {
 }
 .fork-btn-inner::after {
   display: none !important;
+}
+
+/* Container responsiveness */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow-x: hidden;
+}
+
+@media (max-width: 460px) {
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
 }
