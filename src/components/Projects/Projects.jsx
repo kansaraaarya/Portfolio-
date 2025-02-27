@@ -2,8 +2,8 @@
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-// import image from "../../Assets/Projects/img1.jpg";
-// import image1 from "../../Assets/Projects/img2.jpg";
+// import image from "../../assets/Projects/img1.jpg";
+// import image1 from "../../assets/Projects/img2.jpg";
 
 
 function Projects() {

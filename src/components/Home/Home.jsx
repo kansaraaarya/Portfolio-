@@ -1,6 +1,6 @@
 
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.png";  // Assuming your video is in the Assets folder
+import homeLogo from "../../assets/home-main.png";  // Assuming your video is in the Assets folder
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
